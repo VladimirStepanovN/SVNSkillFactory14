@@ -1,24 +1,30 @@
 ﻿namespace SVNSkillFactory14
 {
 	///<summary>
-	///4.4.3. Используя такую запись кортежа, измените предыдущую программу.
-	///Сначала отобразите на экран имя и возраст. 
-	///После этого попросите пользователя ввести эту же информацию с клавиатуры.
+	///4.4.5. Дан следующий кортеж:
+	///(string Name, string Type, double Age, int NameCount) Pet;
+	///Name — имя питомца;
+	///Type — тип питомца: собака, рыбка, хомячок;
+	///Age — возраст питомца;
+	///NameCount — длина имени питомца.
+	///Заполните данный кортеж значениями аналогично примерам, разобранным в модуле выше.
 	///</summary>
 	internal class Program
     {
 		static void Main(string[] args)
 		{
-			var (name, age) = ("Евгения", 27);
-			Console.WriteLine("Ваше имя: {0}", name);
-			Console.WriteLine("Ваш возраст: {0}", age);
-			Console.Write("Введите имя: ");
-			name = Console.ReadLine();
-			Console.Write("Введите возраст с цифрами: ");
-			age = Convert.ToInt32(Console.ReadLine());
-			Console.WriteLine("Ваше имя: {0}", name);
-			Console.WriteLine("Ваш возраст: {0}", age);
-			Console.ReadKey();
+			(string Name, string Type, double Age, int NameCount) Pet;
+            Console.Write("Введите имя вашего питомца: ");
+			Pet.Name = Console.ReadLine();
+			Console.Write("Введите возраст вашего питомца: ");
+			Pet.Age = Double.Parse(Console.ReadLine());
+			Console.Write("Введите тип вашего питомца: ");
+			Pet.Type = Console.ReadLine();
+			Pet.NameCount = Pet.Name.Length;
+			Console.WriteLine($@"Имя вашего питомца: {Pet.Name}");
+			Console.WriteLine($@"Возраст вашего питомца: {Pet.Age}");
+            Console.WriteLine($@"Тип вашего питомца: {Pet.Type}");
+            Console.WriteLine($@"Длина имени вашего питомца: {Pet.NameCount}");
 		}
     }
 }
