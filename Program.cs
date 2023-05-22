@@ -1,20 +1,23 @@
 ﻿namespace SVNSkillFactory14
 {
 	///<summary>
-	///4.4.2. Модифицируйте свою программу для ввода личной информации пользователя так,
-	///чтобы данные записывались в кортеж anketa.
+	///4.4.3. Используя такую запись кортежа, измените предыдущую программу.
+	///Сначала отобразите на экран имя и возраст. 
+	///После этого попросите пользователя ввести эту же информацию с клавиатуры.
 	///</summary>
 	internal class Program
     {
 		static void Main(string[] args)
 		{
-			(string name, int age) anketa;
+			var (name, age) = ("Евгения", 27);
+			Console.WriteLine("Ваше имя: {0}", name);
+			Console.WriteLine("Ваш возраст: {0}", age);
 			Console.Write("Введите имя: ");
-			anketa.name = Console.ReadLine();
+			name = Console.ReadLine();
 			Console.Write("Введите возраст с цифрами: ");
-			anketa.age = Convert.ToInt32(Console.ReadLine());
-			Console.WriteLine("Ваше имя: {0}", anketa.name);
-			Console.WriteLine("Ваш возраст: {0}", anketa.age);
+			age = Convert.ToInt32(Console.ReadLine());
+			Console.WriteLine("Ваше имя: {0}", name);
+			Console.WriteLine("Ваш возраст: {0}", age);
 			Console.ReadKey();
 		}
     }
