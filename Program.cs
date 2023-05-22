@@ -1,48 +1,50 @@
 ﻿namespace SVNSkillFactory14
 {
 	///<summary>
-	///4.1.18. Добавьте в программу обработку ввода цвета cyan,
-	///а в блоке default поменяйте на желтый цвет цвет фона,
-	///а цвет текста — на красный.
+	///4.2.11. Попробуйте самостоятельно реализовать цикл do...while со счётчиком t той же задачи,
+	///которую мы решили с помощью цикла while. Вам необходимо будет объявить переменную t по аналогии
+	///с циклом while со счётчиком k и использовать аналогичный код в теле цикла. 
+	///Как только будете готовы, сверьтесь с кодом ниже.
 	///</summary>
 	internal class Program
     {
-        static void Main(string[] args)
-        {
-			Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
+		static void Main(string[] args)
+		{
+			int t = 0;
+			do {
+				Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
+				switch (Console.ReadLine())
+				{
+					case "red":
+						Console.BackgroundColor = ConsoleColor.Red;
+						Console.ForegroundColor = ConsoleColor.Black;
 
-			var color = Console.ReadLine();
+						Console.WriteLine("Your color is red!");
+						break;
 
-			switch (color)
-			{
-				case "red":
-					Console.BackgroundColor = ConsoleColor.Red;
-					Console.ForegroundColor = ConsoleColor.Black;
+					case "green":
+						Console.BackgroundColor = ConsoleColor.Green;
+						Console.ForegroundColor = ConsoleColor.Black;
 
-					Console.WriteLine("Your color is red!");
-					break;
+						Console.WriteLine("Your color is green!");
+						break;
 
-				case "green":
-					Console.BackgroundColor = ConsoleColor.Green;
-					Console.ForegroundColor = ConsoleColor.Black;
+					case "cyan":
+						Console.BackgroundColor = ConsoleColor.Cyan;
+						Console.ForegroundColor = ConsoleColor.Black;
 
-					Console.WriteLine("Your color is green!");
-					break;
+						Console.WriteLine("Your color is cyan!");
+						break;
 
-				case "cyan":
-					Console.BackgroundColor = ConsoleColor.Cyan;
-					Console.ForegroundColor = ConsoleColor.Black;
+					default:
+						Console.BackgroundColor = ConsoleColor.Yellow;
+						Console.ForegroundColor = ConsoleColor.Red;
 
-					Console.WriteLine("Your color is cyan!");
-					break;
-
-				default:
-					Console.BackgroundColor = ConsoleColor.Yellow;
-					Console.ForegroundColor = ConsoleColor.Red;
-
-					Console.WriteLine("Your color is yellow!");
-					break;
-			}
+						Console.WriteLine("Your color is yellow!");
+						break;
+				}
+				t++;
+			} while (t < 3);
 		}
     }
 }
