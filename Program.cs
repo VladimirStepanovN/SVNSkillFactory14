@@ -1,21 +1,31 @@
 ﻿namespace SVNSkillFactory14
 {
 	///<summary>
-	///4.3.11. Напишите программу, которая отображает этот же массив,
-	///но только перебор начинается по столбцам.
-	///То есть сначала отображаем все знания строк первого столбца, потом второго и далее. 
+	///4.3.12. Эта задача является одной из базовых задач при работе с массивами — 
+	///сортировка одномерного массива.
+	///Вам необходимо отсортировать его в порядке возрастания цифр и вывести на экран.
 	///</summary>
 	internal class Program
     {
 		static void Main(string[] args)
 		{
-			int[,] array = { { 1, 2, 3 }, { 5, 6, 7 }, { 8, 9, 10 }, { 11, 12, 13 } };
-			for (int i = 0; i < array.GetUpperBound(1) + 1; i++)
-			{
-				for (int k = 0; k < array.GetUpperBound(0) + 1; k++)
-					Console.Write(array[k, i] + " ");
-				Console.WriteLine();
-			}
+			var arr = new int[] { 5, 6, 9, 1, 2, 3, 4 };
+			int inner, outer;
+			for(outer = 1; outer < arr.Length; outer++)
+            {
+				int temp = arr[outer];
+				inner = outer;
+				while(inner > 0 && arr[inner - 1] >= temp)
+                {
+					arr[inner] = arr[inner - 1];
+					--inner;
+                }
+                arr[inner] = temp;
+            }
+            foreach(int i in arr)
+            {
+                Console.Write($@"{i} ");
+            }
 		}
     }
 }
