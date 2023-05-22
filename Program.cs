@@ -1,17 +1,21 @@
 ﻿namespace SVNSkillFactory14
 {
 	///<summary>
-	///4.3.9. Проверьте, что будет, если вывести многомерный массив через цикл foreach?
+	///4.3.11. Напишите программу, которая отображает этот же массив,
+	///но только перебор начинается по столбцам.
+	///То есть сначала отображаем все знания строк первого столбца, потом второго и далее. 
 	///</summary>
 	internal class Program
     {
 		static void Main(string[] args)
 		{
-			int[,] array = { { 1, 2, 3 }, { 5, 6, 7 } };
-			foreach (int i in array)
-            {
-				Console.Write($@"{i} ");
-            }
+			int[,] array = { { 1, 2, 3 }, { 5, 6, 7 }, { 8, 9, 10 }, { 11, 12, 13 } };
+			for (int i = 0; i < array.GetUpperBound(1) + 1; i++)
+			{
+				for (int k = 0; k < array.GetUpperBound(0) + 1; k++)
+					Console.Write(array[k, i] + " ");
+				Console.WriteLine();
+			}
 		}
     }
 }
