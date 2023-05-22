@@ -1,21 +1,17 @@
 ﻿namespace SVNSkillFactory14
 {
 	///<summary>
-	///4.3.7. Используя полученные знания и способы работы с данными,
-	///напишите программу, которая переставляет буквы вашего имени в обратном порядке.
+	///4.3.9. Проверьте, что будет, если вывести многомерный массив через цикл foreach?
 	///</summary>
 	internal class Program
     {
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Введите своё имя");
-			var name = Console.ReadLine();
-			Console.WriteLine("Ваше имя в обратном порядке: ");
-			for (int i = name.Length - 1; i >= 0; i--)
-			{
-                Console.Write(name[i]);
-			}
-			Console.ReadKey();
+			int[,] array = { { 1, 2, 3 }, { 5, 6, 7 } };
+			foreach (int i in array)
+            {
+				Console.Write($@"{i} ");
+            }
 		}
     }
 }
