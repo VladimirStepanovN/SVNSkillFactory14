@@ -1,7 +1,7 @@
 ﻿namespace SVNSkillFactory14
 {
 	///<summary>
-	///4.5.2. Заполните кортеж User значениями с клавиатуры для полей: имя пользователя, фамилия, логин.
+	///4.5.3. Вычислите длину логина пользователя.
 	///</summary>
 	internal class Program
     {
@@ -14,6 +14,7 @@
             User.LastName = Console.ReadLine();
 			Console.WriteLine("Введите логин");
             User.Login = Console.ReadLine();
+			User.LoginLength = User.Login.Length;
 		}
     }
 }
