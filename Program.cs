@@ -1,7 +1,8 @@
 ﻿namespace SVNSkillFactory14
 {
 	///<summary>
-	///4.5.3. Вычислите длину логина пользователя.
+	///4.5.4. Напишите условие, которое устанавливает значение ИСТИНА в поле наличие/отсутствие животных,
+	///если пользователь вводит "Да", и ЛОЖЬ при любом другом варианте.
 	///</summary>
 	internal class Program
     {
@@ -15,6 +16,8 @@
 			Console.WriteLine("Введите логин");
             User.Login = Console.ReadLine();
 			User.LoginLength = User.Login.Length;
+			Console.WriteLine("Есть ли у вас животные? Да или Нет");
+			User.HasPet = "Да".Equals(Console.ReadLine());
 		}
     }
 }
